@@ -117,27 +117,25 @@ fs_subj_dir = op.join(
 if pipeline_params["recon_all"] and not op.exists(fs_subj_dir):
     recon_all_func(fs_path, raw_subj)
 
-def bem_watershed_func(fs_path, raw_subj, overwrite=False):
+def bem_watershed_func(fs_path, raw_subj):
     sp.call([
         "mne",
         "watershed_bem",
         "-s", raw_subj,
-        "-d", fs_path,
-        "-o", overwrite
+        "-d", fs_path
     ])
 
 if pipeline_params["bem_watershed"] and op.exists(fs_subj_dir):
     bem_watershed_func(fs_path, raw_subj)
 
-def make_scalp_surface_func(fs_path, raw_subj, overwrite=False):
+def make_scalp_surface_func(fs_path, raw_subj):
     sp.call([
         "mne",
         "make_scalp_surfaces",
         "-s", raw_subj,
         "-d", fs_path,
-        "-f", True,
-        "-o", overwrite
+        "-f", True
     ])
 
-if pipeline_params["make_scalp_surface"]:
+if pipeline_params["make_scalp_surface"] and op.exists(fs_subj_dir):
     make_scalp_surface_func(fs_path, raw_subj)
