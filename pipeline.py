@@ -134,7 +134,7 @@ def make_scalp_surface_func(fs_path, raw_subj):
         "make_scalp_surfaces",
         "-s", raw_subj,
         "-d", fs_path,
-        "-f", True
+        "-f", "True"
     ])
 
 if pipeline_params["make_scalp_surface"] and op.exists(fs_subj_dir):

@@ -2,8 +2,8 @@
     "RAW_PATH": "/cubric/scratch/c1557187/MRI_337/RAW",
     "T1_PATH": "/cubric/scratch/c1557187/MRI_337/T1",
     "FS_PATH": "/cubric/scratch/c1557187/MRI_337/FS_OUTPUT",
-    "t1_conversion": false,
-    "recon_all": false,
+    "t1_conversion": true,
+    "recon_all": true,
     "bem_watershed": true,
     "make_scalp_surface": true
 }
